@@ -43,18 +43,21 @@ trainset_tidy <-cbind(subjecttrainset,trainsetlabels, trainset)
 bigdata <- rbind(testset_tidy, trainset_tidy)
 bigdata <- arrange(bigdata,Subject)
 
-### renames values of the Activity variable
-
+### renames values of the Activity variable to a more descriptive one
 namevector <- c("WALKING", "WALKIN_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING")
 for(i in 1:6) {bigdata$Activity <- gsub(i, namevector[i], bigdata$Activity)}
-
-
 
 
 output <- bigdata %>%
   group_by(Subject,Activity) %>%
   summarise_each(funs(mean)) %>%
   arrange(Subject) 
-  
+
+### creates descriptive column names  
+colnames(output) <- gsub ( "\\(|\\)", "", colnames(output))
+tidy_names <- vector("character")
+for (i in 3:68) {tidy_names[i] <-paste("mean_of_",colnames(output[i]),sep="" )}
+colnames(output) <-c("Subject", "Activity", tidy_names[3:68])
+
 
 write.table(output, "assignmet.txt",  row.names = FALSE) 
