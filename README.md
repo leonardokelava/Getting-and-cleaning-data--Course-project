@@ -2,8 +2,9 @@
 
 
 To create your own copy of data, open the run_analysis script in R and source it. 
-It will create a table with the data in your working directory. 
-Then open that table using:
-data <- read.table(file_path, header = TRUE) 
+It will create a table with the data and store it in file "assignment.txt" which will 
+be stored in your working directory. 
+Then open that table by writing ext commands in  R command prompt:
 
-View(data)
+>>> data <- read.table("assignment.txt", header = TRUE) 
+>>>View(data)
