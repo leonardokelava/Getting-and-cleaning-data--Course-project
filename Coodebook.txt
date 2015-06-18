@@ -1,6 +1,6 @@
-First part is the document made by Smartlab group whih describes their experiment. 
-Second part is detailed description of all the variables they used in their original data.
-Third part is the script that describes how my data analysis was performed.  
+First part is the copy of tze document made by Smartlab group which describes their experiment. 
+Second part is copy detailed description of all the variables they used in their original data.
+Third part is contains variables that I have created.  
 
 Part 1.
 ==================================================================
