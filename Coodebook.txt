@@ -5,19 +5,17 @@ A full description is available at the site where the data was obtained from:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
 Second part is short description of all the variables they used in their original data.
-Here are the data for the project: 
+Here are the original data for the project: 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
-You can download the data and unzip it to your working directory yourself. Alternatively, if
-you source run_analysis.R, the program will download the data by itself ,
-it will unzip it to your working directory and it will then  perform my analysis on it,
+You can download the data and unzip it to your working directory yourself. 
+Preferably, you could  source run_analysis.R and  the program will download the data by itself ,
+it will unzip it to your working directory and it will then  perform  analysis on it,
 creating a text document "summarized_by_subject_and_activity.txt"
 
-For more detailed info about original data, you may open the files within the .zip file: 
-README.txt,features_info.txt,features.txt, activity_labels.txt, train/X_train.txt, train/y_train.txt, test/X_test.txt, 
-test/y_test.txt.
+The file "features_info.txt", within the zip file, contains detailed information about original signals and the variables that were created upon them. Run_analysis.R program takes the calcukated means and standard deviations for the signals, and then calculates their means, summarized for each subject and activity.    
 
-Third part is contains variables that I have created.  
+Third part contains comprehensive list of variables that are created by run_analysis script.   
 
 Part 1.
 
@@ -32,7 +30,7 @@ variables from the time and frequency domain. See 'features_info.txt' for more d
 
 Part 2.
 For each record it is provided:
-======================================
+
 
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 - Triaxial Angular velocity from the gyroscope. 
@@ -42,7 +40,8 @@ For each record it is provided:
 
 
 Part 3.
-Run_analysis contains this variables : 
+
+run_analysis creates a table with  this variables : 
 Subject
 Activity
 mean_by_subject_and_activity-tBodyAcc-mean-X
