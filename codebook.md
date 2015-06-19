@@ -43,10 +43,15 @@ Part 3.
 
 run_analysis creates a table with  this variables : 
 Subject
+
 Activity
+
 mean_by_subject_and_activity-tBodyAcc-mean-X
+
 mean_by_subject_and_activity-tBodyAcc-mean-Y
+
 mean_by_subject_and_activity-tBodyAcc-mean-Z
+
 mean_by_subject_and_activity-tBodyAcc-std-X
 mean_by_subject_and_activity-tBodyAcc-std-Y
 mean_by_subject_and_activity-tBodyAcc-std-Z
