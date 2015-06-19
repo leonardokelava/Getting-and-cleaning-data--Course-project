@@ -60,4 +60,4 @@ for (i in 3:68) {tidy_names[i] <-paste("mean_by_subject_and_activity-",colnames(
 colnames(output) <-c("Subject", "Activity", tidy_names[3:68])
 
 
-write.table(output, "assignment.txt",  row.names = FALSE) 
+write.table(output, "summarized_by_subject_and_activity.txt",  row.names = FALSE) 
