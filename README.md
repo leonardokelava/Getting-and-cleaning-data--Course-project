@@ -9,3 +9,7 @@ Then open that table by writing next commands in  R command prompt:
 
 >>> data <- read.table("summarized_by_subject_and_activity.txt", header = TRUE) 
 >>>View(data)
+
+The data was created by :
+R-Studio Version 0.98.1103 
+[64-bit] R-3.2.0
