@@ -14,7 +14,7 @@ The data was created by :
 R-Studio Version 0.98.1103 
 [64-bit] R-3.2.0
 
-Underneath, you can find tte script with the explanations of what it does.
+Underneath, you can find the script with the explanations of what it does.
 
 ###downloads and extracts the data if that is not done already
 
