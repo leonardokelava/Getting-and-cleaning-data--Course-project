@@ -56,7 +56,7 @@ output <- bigdata %>%
 ### creates descriptive column names  
 colnames(output) <- gsub ( "\\(|\\)", "", colnames(output))
 tidy_names <- vector("character")
-for (i in 3:68) {tidy_names[i] <-paste("mean_of_",colnames(output[i]),sep="" )}
+for (i in 3:68) {tidy_names[i] <-paste("mean_by_subject_and_activity-",colnames(output[i]),sep="" )}
 colnames(output) <-c("Subject", "Activity", tidy_names[3:68])
 
 
