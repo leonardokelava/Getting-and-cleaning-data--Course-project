@@ -13,7 +13,7 @@ Preferably, you could  source run_analysis.R and  the program will download the 
 it will unzip it to your working directory and it will then  perform  analysis on it,
 creating a text document "summarized_by_subject_and_activity.txt"
 
-The file "features_info.txt", within the zip file, contains detailed information about original signals and the variables that were created upon them. Run_analysis.R program takes the calcukated means and standard deviations for the signals, and then calculates their means, summarized for each subject and activity.    
+
 
 Third part contains comprehensive list of variables that are created by run_analysis script.   
 
@@ -38,6 +38,7 @@ For each record it is provided:
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
+The file "features_info.txt", within the zip file, contains detailed information about original signals and the variables that were created upon them. Run_analysis.R program takes the calculated means and standard deviations for the signals, and then calculates their means, summarized for each subject and activity.    
 
 Part 3.
 
@@ -46,8 +47,8 @@ Subject is a ID of a person who performed the activity. Its values ranges from 1
 Activity is a categoric variable that describes the activity performed. 
 The rest of values are means of  standard deviations and means calculated for each subject and activity.  
 Their names are derived by adding string  "mean_by_subject_and_activity" in front of the original value for which
-mean was calculated. 
-Each row has  summary means by one subject and by one activity measured for each variable. 
+the mean was calculated. 
+Each row has  summary means by one subject and by one activity.
 This is comprehensive list of all variables. 
 
 Subject
