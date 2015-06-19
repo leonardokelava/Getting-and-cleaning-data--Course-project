@@ -16,7 +16,7 @@ R-Studio Version 0.98.1103
 
 Underneath, you can find tte script with the explanations of what it does.
 
-###downloads and extracts data if that is not done already
+###downloads and extracts the data if that is not done already
 
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 if(!dir.exists("Projectdata")) {dir.create ("Projectdata")}
@@ -29,13 +29,16 @@ library(tidyr)
 
 
 
-### collects all variables that have either the word "mean" or the word "std" in their name 
+### Collects indices of all variables that have either the word "mean" or the word "std" in their name.
+### Then it collects  the indices of all variables containing word "Freq", since those values are derivatives 
+### from original data and are not needed. Then it removes those indices from the rest of needed ones.
+
 allvariables <- read.table("./Projectdata/UCI HAR Dataset/features.txt")
 index <- grep("std|mean" , allvariables[,2])
 notneeded <- grep("Freq", allvariables[,2])
 indexneeded <- index[!(index%in%notneeded)]
 
-### by lines 1. loads the test set data 2. selects for columns that contain std or mean values  3. assigns the right column names
+###  loads the test set data. selects for columns that we need 3. assigns the right column names
 testset<- read.table("./Projectdata/UCI HAR Dataset/test/x_test.txt",  colClasses = "numeric")
 testset <- testset[,indexneeded]
 colnames(testset) <- allvariables[indexneeded,2]
@@ -46,7 +49,7 @@ testsetactivitylabels <- read.table("./Projectdata/UCI HAR Dataset/test/y_test.t
 testset_tidy <-cbind(subjecttestset,testsetactivitylabels, testset)
 
 
-### by lines 1. loads the train set data 2. selects the same columns as from the test set 3. assigns the right column names
+### loads the train set data. selects the same columns as from the test set. assigns the right column names
 trainset <- read.table("./Projectdata/UCI HAR Dataset/train/x_train.txt",  colClasses = "numeric")
 trainset <-trainset[,indexneeded]
 colnames(trainset) <- allvariables[indexneeded,2]
@@ -65,17 +68,17 @@ bigdata <- arrange(bigdata,Subject)
 namevector <- c("WALKING", "WALKIN_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING")
 for(i in 1:6) {bigdata$Activity <- gsub(i, namevector[i], bigdata$Activity)}
 
-
+### creates the final data
 output <- bigdata %>%
   group_by(Subject,Activity) %>%
   summarise_each(funs(mean)) %>%
   arrange(Subject) 
 
-### creates descriptive column names  
+### creates descriptive column names  for the newly created table
 colnames(output) <- gsub ( "\\(|\\)", "", colnames(output))
 tidy_names <- vector("character")
 for (i in 3:68) {tidy_names[i] <-paste("mean_by_subject_and_activity-",colnames(output[i]),sep="" )}
 colnames(output) <-c("Subject", "Activity", tidy_names[3:68])
 
-
+### creates the table with final data
 write.table(output, "summarized_by_subject_and_activity.txt",  row.names = FALSE) 
