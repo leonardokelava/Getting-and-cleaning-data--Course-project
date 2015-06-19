@@ -41,7 +41,14 @@ For each record it is provided:
 
 Part 3.
 
-run_analysis creates a table with  this variables : 
+Run_analysis creates a table with 68 variables shown below. 
+Subject is a ID of a person who performed the activity. Its values ranges from 1 to 30.
+Activity is a categoric variable that describes the activity performed. 
+The rest of values are means of  standard deviations and means calculated for each subject and activity.  
+Their names are derived by adding string  "mean_by_subject_and_activity" in front of the original value for which
+mean was calculated. 
+Each row has  summary means by one subject and by one activity measured for each variable. 
+This is comprehensive list of all variables. 
 
 Subject
 
