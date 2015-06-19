@@ -1,7 +1,7 @@
 # Getting-and-cleaning-data--Course-project
 
 
-To create your own copy of data, open the run_analysis script in R and source it. 
+To create your own copy of data,download "run_analysis.R" file,  open it  in R and source it. 
 It will create a table with the data and store it in file "summarized_by_subject_and_activity.txt" which will 
 be stored in your working directory. 
 
