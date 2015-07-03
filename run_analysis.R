@@ -1,5 +1,9 @@
 
 
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+if(!dir.exists("Projectdata")) {dir.create ("Projectdata")}
+if(!file.exists("./Projectdata/Dataset.zip")) {download.file(url, "./Project data/Dataset.zip")}
+if(!file.exists("./Projectdata/UCI HAR Dataset")) {unzip("./Projectdata/Dataset.zip",  exdir = "./Projectdata")}
 
 library(dplyr)
 library(tidyr)
